@@ -1,0 +1,3 @@
+#!/bin/sh
+# Sam Fields sefields
+gcc -g -O0 -Wall -Wextra -std=gnu99 decToBinary.c -o decToBinary

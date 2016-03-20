@@ -1,0 +1,19 @@
+//
+// This program will test drive the graph ADT
+//
+//
+
+#include"graph.h"
+
+int main (int argc, char** argv) {
+  argc = argc;
+  argv = argv;
+  graphHndl graphy = newGraph(10);
+  addEdge(graphy, 0, 8);
+  addEdge(graphy, 1, 7);
+  addEdge(graphy, 4, 3);
+  addEdge(graphy, 4, 2);
+  addEdge(graphy, 4, 5);
+  BFS(graphy, 4);
+  printGraph(graphy);
+}

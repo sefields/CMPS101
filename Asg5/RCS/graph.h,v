@@ -1,0 +1,40 @@
+head	1.1;
+access;
+symbols;
+locks;
+comment	@ * @;
+
+
+1.1
+date	2014.06.04.21.47.18;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@-
+@
+text
+@//
+// graph.h
+// The outline of the graph ADT
+//
+//
+
+#include<stdio.h>
+
+typedef struct graphStruct* graphHndl;
+
+graphHndl newGraph(int n);
+
+void addEdge(graphHndl G, int from, int to);
+
+void printGraph(graphHndl G);
+
+void BFS(graphHndl G, int source);
+@

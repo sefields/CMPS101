@@ -1,0 +1,15 @@
+//
+// graph.h
+// The outline of the graph ADT
+//
+//
+
+#include<stdio.h>
+
+typedef struct graphStruct* graphHndl;
+
+graphHndl newGraph(int n);
+
+void addEdge(graphHndl G, int from, int to);
+
+void printGraph(graphHndl G);

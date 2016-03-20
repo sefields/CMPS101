@@ -1,0 +1,103 @@
+head	1.1;
+access;
+symbols;
+locks;
+comment	@ * @;
+
+
+1.1
+date	2014.06.04.21.46.54;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@-
+@
+text
+@//
+// The definitions of the functions for the graph ADT outlined in graph.h
+//
+//
+
+#include <stdlib.h>
+#include <string.h>
+#include "list.h"
+#include "graph.h"
+
+struct graphStruct {
+  int numVertices;
+  ListHndl vertices[10000];
+} graphStruct;
+
+graphHndl newGraph(int n) {
+  graphHndl this = malloc(sizeof(graphStruct));
+  //Initialize numVertices and vertices
+  this->numVertices = n;
+  for (int i = 0; i < this->numVertices ; i++) {
+    this->vertices[i] = newList();
+  }
+  return this;
+}
+
+void addEdge(graphHndl G, int from, int to) {
+  insertAtBack(G->vertices[from],to);
+}
+
+void printGraph(graphHndl G) {
+  printf("\n");
+  for (int i = 0; i < G->numVertices ; i++ ) {
+    printf("Vertex #%d has edges to the following vertices:\n", i);
+    printList(stdout,G->vertices[i]);
+    printf("\n");
+  }
+}
+
+void BFS(graphHndl G, int source) {
+  char* colors[10000];
+  int distances[10000];
+  int parents[10000];
+  //All vertices except source are white, infinite distance, null parents
+  for (int i = 0; i < G->numVertices ; i++) {
+    if (i != source) {
+      colors[i] = "white";
+      distances[i] = 99999;
+      parents[i] = -1;
+    }
+  }
+  //Source color, distance, and parent set
+  colors[source] = "gray";
+  distances[source] = 0;
+  parents[source] = -1;
+
+  //Initialize queue containing only S
+  ListHndl Q = newList();
+  insertAtBack(Q, source);
+  
+  //Determine what vertex is at the head of Q. Remove it.
+    int u = getFirst(Q);
+    deleteFirst(Q);
+
+    for (NodePtr curr = firstNode(G->vertices[u]) ; curr != NULL; curr = nextNode(curr)) {
+      int v = getData(curr);
+      if (strncmp(colors[v],"white",10)==0) {
+	colors[v] = "gray";
+	distances[v] = distances[u] +1;
+	parents[v] = u;
+	insertAtBack(Q,v);
+    }
+  }
+    colors[u] = "black";
+
+  //Print the arrays to make sure it worked (it worked)
+  for (int i = 0; i < G->numVertices ; i++) {
+    printf("Vertex #%d has color %s, distance %d, parent %d\n"
+	   ,i,colors[i],distances[i], parents[i]);
+	   }
+}
+@

@@ -1,0 +1,11 @@
+Sam Fields sefields
+README file for intstack ADT
+NOTE:  use "./a.out" to run the program
+
+The intstack ADT contains the following files:
+ReadMe.txt   This documentation file
+intstack.h   The header file describing the adt operations
+intstack.c   The implementation of the intstack ADT
+intstackdr.c A simple program that tests out the ADT operations
+Makefile     A makefile that complies the module and driver
+	       it makes intstack.o, instackdriver.o, and a.out

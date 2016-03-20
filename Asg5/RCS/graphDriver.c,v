@@ -1,0 +1,43 @@
+head	1.1;
+access;
+symbols;
+locks;
+comment	@ * @;
+
+
+1.1
+date	2014.06.04.21.47.05;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@-
+@
+text
+@//
+// This program will test drive the graph ADT
+//
+//
+
+#include"graph.h"
+
+int main (int argc, char** argv) {
+  argc = argc;
+  argv = argv;
+  graphHndl graphy = newGraph(10);
+  addEdge(graphy, 0, 8);
+  addEdge(graphy, 1, 7);
+  addEdge(graphy, 4, 3);
+  addEdge(graphy, 4, 2);
+  addEdge(graphy, 4, 5);
+  addEdge(graphy, 5, 0);
+  BFS(graphy, 4);
+  printGraph(graphy);
+}
+@

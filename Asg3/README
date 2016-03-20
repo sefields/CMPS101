@@ -1,0 +1,77 @@
+
+Sam Fields
+
+CS 101
+
+**********************************
+Asg 3: Heapsort and Insertion Sort
+**********************************
+
+insertionSort.c
+Defines the insertionSort method specified in insertionSort.h
+
+insertionSort.h
+The header file for the insertionSort method defined in insertionSort.c
+
+heapSort.c
+Defines the heapSort method specified in heapSort.h
+
+heapSort.h
+The header file for the heapSort method defined in heapSort.c
+
+heap.c
+The heap ADT which defines all the methods for heap construction
+and manipulation which are specified in heap.h
+
+heap.h
+The header file which specifies the methods for the heap ADT whose
+methods are defined in heap.c
+
+heapDriver.c
+The code for the program that tests the functions of the heap ADT.
+
+sortPrint.c
+Code for the program which tests the heapSort and insertionSort methods,
+prints the results of each, and verifies that both sorts were correct.
+
+sortComp.c
+Code for the program which runs the heapSort and insertionSort methods
+on two separate arrays of the same data, measures the speed of each sorting
+method, and prints information about the speed of each.
+
+Makefile
+Compiles the code and creates the three programs
+sortComp, sortPrint, heapDriver
+
+
+************************************
+Experiment Results
+************************************
+
+Input file with 100 integers:
+heapSort : 0.000000 seconds
+insertionSort: 0.000000 seconds
+
+Input file with 1000 integers:
+heapSort : 0.000000 seconds
+insertionSort: 0.000000 seconds
+
+Input file with 10000 integers:
+heapSort : 0.000000 seconds
+insertionSort : 0.110000 seconds
+
+Input file with 100000 integers:
+heapSort : .040000 seconds
+insertionSort : 10.710000 seconds
+
+For small sets of data, here meaning <=10000 integers, heapSort and
+insertionSort are both very fast. Both took well under a second to
+sort any data set of these sizes. For a small set of data, the decision
+between the two is trivial.
+
+However, using a set of data of 100000 integers showed marked differences
+between the two. heapSort still took well under a second while
+insertionSort took nearly 11 seconds. This is indicative of
+insertionSort's O(n^2) speed vs. heapSort's O(n lg n) speed. As
+the size of the input set of data increases, heapSort will be more
+and more efficient than insertionSort.

@@ -1,0 +1,49 @@
+
+Sam Fields
+
+CS 101
+
+**********************************
+Asg 3: Heapsort and Insertion Sort
+**********************************
+
+insertionSort.c
+Defines the insertionSort method specified in insertionSort.h
+
+insertionSort.h
+The header file for the insertionSort method defined in insertionSort.c
+
+heapSort.c
+Defines the heapSort method specified in heapSort.h
+
+heapSort.h
+The header file for the heapSort method defined in heapSort.c
+
+heap.c
+The heap ADT which defines all the methods for heap construction
+and manipulation which are specified in heap.h
+
+heap.h
+The header file which specifies the methods for the heap ADT whose
+methods are defined in heap.c
+
+heapDriver.c
+The code for the program that tests the functions of the heap ADT.
+
+sortPrint.c
+Code for the program which tests the heapSort and insertionSort methods,
+prints the results of each, and verifies that both sorts were correct.
+
+sortComp.c
+Code for the program which runs the heapSort and insertionSort methods
+on two separate arrays of the same data, measures the speed of each sorting
+method, and prints information about the speed of each.
+
+Makefile
+Compiles the code and creates the three programs
+sortComp, sortPrint, heapDriver
+
+
+************************************
+Experiment Results
+************************************
